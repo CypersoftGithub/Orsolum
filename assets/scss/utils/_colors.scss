@@ -1,0 +1,136 @@
+$colors: (
+  common: (
+    "white": #ffffff,
+    "black": #005734,
+    "placeholder": #005734,
+  ),
+  body: (
+    "primary": #ffffff,
+  ),
+  theme: (
+    "primary": #005734,
+    "secondary": #005734,
+  ),
+  heading: (
+    "primary": #005734,
+  ),
+  text: (
+    "body": #005734,
+    "primary": #005734,
+  ),
+  shadow: (
+      "primary": 0px 30px 60px 0px rgba(0, 87, 52, 0.10),
+  ),
+  background: (
+      "gray": #ffffff,
+      "dark-green": #005734,
+  ),
+  border: (
+    "primary": 1px solid #005734,
+  )
+);
+
+
+.banner-home-bg{
+  background: linear-gradient(90deg, rgba(0, 87, 52, 0.10) 0.19%, rgba(216, 216, 216, 0.10) 49.48%, rgba(0, 87, 52, 0.10) 99.8%);
+}
+
+.latest-feature-bg{
+  background-color: #ffffff;
+}
+
+.latest-Choose-bg{
+  background-color: #ffffff;
+}
+
+.latest-service-bg{
+  background-color: #ffffff;
+}
+
+.latest-counter-bg{
+  background-color: var(--rr-heading-primary);
+}
+
+.question-bg{
+  background-color: #ffffff;
+}
+
+.latest-team-bg{
+  background-color: #005734;
+}
+
+.latest-project-bg{
+  background-color: #ffffff;
+}
+
+.latest-testimonial-bg{
+  background-color: #ffffff;
+}
+
+.latest-blog-bg{
+  background-color: #ffffff;
+}
+
+.latest-newsletter-bg{
+  background-color: #ffffff;
+}
+
+.footer-home-1-bg{
+  background-color: #ffffff;
+}
+
+.footer__bottom-home-1-bg{
+  background-color: #005734;
+}
+
+.latest-blog2-bg{
+  background-color: #ffffff;
+}
+
+.white-bg{
+  background: #ffffff !important;
+}
+.product-bg{
+  background: #ffffff;
+}
+
+.heading-color{
+  color: #005734 !important;
+}
+.white-color{
+  color: #ffffff !important;
+}
+.gray-color{
+  color: #ffffff !important;
+}
+/*home-3-feature-card-bg-color*/
+.frist-bg{
+	background: #ffffff;
+}
+.second-bg{
+	background: #ffffff;
+}
+.thaird-bg{
+	background: #ffffff;
+}
+.banner-bg-3{
+  background: #ffffff;
+}
+.body-color{
+  color: var(--rr-text-body) !important;
+}
+.happy-customer-bg{
+  background: #ffffff;
+}
+.footer-home-3-bg{
+  background: #ffffff;
+}
+.bg-headr-3{
+  background: var(--rr-common-white) !important;
+}
+
+.hover-theme{
+  &:hover{
+    color: #005734;
+  }
+}
