@@ -1704,7 +1704,6 @@ textarea {
 /*----------------------------------------*/
 .rr-btn {
   color: var(--rr-common-white);
-  font-family: var(--rr-ff-heading);
   font-size: 14px;
   font-style: normal;
   line-height: 30px;
@@ -1860,7 +1859,6 @@ textarea {
 }
 
 .rr-btn2 {
-  font-family: var(--rr-ff-heading);
   color: var(--rr-heading-primary);
   font-weight: var(--rr-fw-medium);
   font-size: 14px;
@@ -20197,7 +20195,6 @@ body .ui-tooltip {
 }
 .footer-bottom-border .footer__bottom .footer__copyright p {
   color: var(--rr-text-body);
-  font-family: var(--rr-ff-body);
   font-weight: var(--rr-fw-regular);
   line-height: var(--rr-lh-h6);
   font-size: 18px;
@@ -20209,7 +20206,6 @@ body .ui-tooltip {
 }
 .footer-bottom-border .footer__bottom .footer__copyright-menu ul li a {
   color: var(--rr-text-body);
-  font-family: var(--rr-ff-body);
   font-weight: var(--rr-fw-regular);
   line-height: var(--rr-lh-h6);
   font-size: 18px;
@@ -20221,7 +20217,6 @@ body .ui-tooltip {
 
 .footer__copyright p {
   color: var(--rr-common-white);
-  font-family: var(--rr-ff-heading);
   font-weight: var(--rr-fw-regular);
   line-height: var(--rr-lh-h5);
   font-size: 14px;
@@ -20258,7 +20253,6 @@ body .ui-tooltip {
 }
 
 .footer__copyright p {
-  font-family: var(--rr-ff-body);
   color: var(--rr-common-white);
   font-weight: var(--rr-fw-regular);
   line-height: var(--rr-lh-h5);
@@ -20298,7 +20292,6 @@ body .ui-tooltip {
   display: none;
 }
 .footer__copyright-menu ul li a {
-  font-family: var(--rr-ff-body);
   color: var(--rr-common-white);
   font-weight: var(--rr-fw-regular);
   line-height: var(--rr-lh-h5);
