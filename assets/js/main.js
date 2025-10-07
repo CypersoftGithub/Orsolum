@@ -787,7 +787,7 @@
                 $('.contact-us__form').append('<p class="success-message mt-3 mb-0">Your message has been sent successfully.</p>');
 
             });
-        }, 1000);
+        }, 100);
     });
 
     $('#showlogin').on('click', function() {
