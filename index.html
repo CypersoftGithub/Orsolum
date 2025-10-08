@@ -233,12 +233,98 @@ textarea.form-control {
   animation: spin 1s linear infinite;
 }
 
+/* Full Screen Loader Styles */
+.fullscreen-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 9999;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fullscreen-loader.show {
+  display: flex;
+}
+
+.fullscreen-loader-content {
+  text-align: center;
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.fullscreen-loader-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 20px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.fullscreen-loader-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fullscreen-loader-text {
+  font-family: "Kanit", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.fullscreen-loader-subtext {
+  font-family: "Kanit", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
     </style>
 </head>
 
 
 <body>
 
+<!-- Full Screen Loader -->
+<div class="fullscreen-loader" id="fullscreenLoader">
+    <div class="fullscreen-loader-content">
+        <div class="fullscreen-loader-icon">
+            <img src="assets/imgs/logo/favicon.png" alt="Orsolum Loading">
+        </div>
+        <div class="fullscreen-loader-text">Processing Your Request</div>
+        <div class="fullscreen-loader-subtext">Please wait while we submit your order...</div>
+    </div>
+</div>
 
 <!-- preloader start -->
 <div id="preloader">
@@ -625,7 +711,7 @@ textarea.form-control {
               const phoneInput = document.getElementById('phone');
               const addressInput = document.getElementById('address');
               const submitBtn = document.getElementById('submitBtn');
-              const loadingSpinner = document.getElementById('loadingSpinner');
+              const fullscreenLoader = document.getElementById('fullscreenLoader');
 
               let isValid = true;
 
@@ -646,19 +732,17 @@ textarea.form-control {
 
               if (!isValid) return;
 
-              // Show loading state
+              // Show full-screen loading state
               submitBtn.disabled = true;
-              submitBtn.classList.add('btn-loading');
-              loadingSpinner.classList.add('show');
-              form.classList.add('form-loading');
+              fullscreenLoader.classList.add('show');
+              document.body.style.overflow = 'hidden'; // Prevent scrolling
 
               fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                  // Hide loading state
+                  // Hide full-screen loading state
+                  fullscreenLoader.classList.remove('show');
+                  document.body.style.overflow = 'auto'; // Restore scrolling
                   submitBtn.disabled = false;
-                  submitBtn.classList.remove('btn-loading');
-                  loadingSpinner.classList.remove('show');
-                  form.classList.remove('form-loading');
 
                   // Hide booking modal if open
                   var buyModalEl = document.getElementById('buyModal');
@@ -680,11 +764,10 @@ textarea.form-control {
                   }, 100);
                 })
                 .catch(error => {
-                  // Hide loading state on error
+                  // Hide full-screen loading state on error
+                  fullscreenLoader.classList.remove('show');
+                  document.body.style.overflow = 'auto'; // Restore scrolling
                   submitBtn.disabled = false;
-                  submitBtn.classList.remove('btn-loading');
-                  loadingSpinner.classList.remove('show');
-                  form.classList.remove('form-loading');
                   console.error('Error!', error.message);
                 });
             })
